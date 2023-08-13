@@ -1,0 +1,96 @@
+
+from random import *
+
+The randrange and randint functions
+
+If you want integer random values, one of the following functions would fit better:
+
+randrange(end)
+randrange(beg, end)
+randrange(beg, end, step)
+randint(left, right)
+The first three invocations will generate an integer taken (pseudorandomly) from the range (respectively):
+
+range(end)
+range(beg, end)
+range(beg, end, step)
+Note the implicit right-sided exclusion!
+
+The last function is an equivalent of randrange(left, right+1) - it generates the integer value i, which falls in the range [left, right] (no exclusion on the right side).
+
+Look at the code in the editor. This sample program will consequently output a line consisting of three zeros and either a zero or one at the fourth place.
+
+
+Selected functions from the random module: continued
+The previous functions have one important disadvantage - they may produce repeating values even if the number of subsequent invocations is not greater than the width of the specified range.
+
+Look at the code below - the program very likely outputs a set of numbers in which some elements are not unique:
+
+from random import randint
+
+for i in range(10):
+    print(randint(1, 10), end=',')
+
+
+This is what we got in one of the launches:
+
+9,4,5,4,5,8,9,4,8,4,
+sample output
+
+The choice and sample functions
+
+As you can see, this is not a good tool for generating numbers in a lottery. Fortunately, there is a better solution than writing your own code to check the uniqueness of the "drawn" numbers.
+
+
+It's a function named in a very suggestive way - choice:
+
+choice(sequence)
+sample(sequence, elements_to_choose)
+The first variant chooses a "random" element from the input sequence and returns it.
+
+The second one builds a list (a sample) consisting of the elements_to_choose element "drawn" from the input sequence.
+
+In other words, the function chooses some of the input elements, returning a list with the choice. The elements in the sample are placed in random order. Note: the elements_to_choose must not be greater than the length of the input sequence.
+
+Look at the code below:
+
+from random import choice, sample
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+print(choice(my_list))
+print(sample(my_list, 5))
+print(sample(my_list, 10))
+
+
+Again, the output of the program is not predictable. Our results looked like this:
+
+4
+[3, 1, 8, 9, 10]
+[10, 8, 5, 1, 6, 4, 3, 9, 7, 2]
+
+
+
+Key takeaways
+
+1. A function named dir() can show you a list of the entities contained inside an imported module. For example:
+
+import os
+dir(os)
+
+
+prints out the list of all the os module's facilities you can use in your code.
+
+
+2. The math module couples more than 50 symbols (functions and constants) that perform mathematical operations (like sine(), pow(), factorial()) or providing important values (like π and the Euler symbol e).
+
+
+3. The random module groups more than 60 entities designed to help you use pseudo-random numbers. Don't forget the prefix "random", as there is no such thing as a real random number when it comes to generating them using the computer's algorithms.
+
+
+4. The platform module contains about 70 functions which let you dive into the underlaying layers of the OS and hardware. Using them allows you to get to know more about the environment in which your code is executed.
+
+
+5. Python Module Index (https://docs.python.org/3/py-modindex.html is a community-driven directory of modules available in the Python universe. If you want to find a module fitting your needs, start your search there.
+
+
