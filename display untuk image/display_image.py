@@ -2,9 +2,10 @@
 #by Mr. widodo
 from PIL import Image
 import pylab
+import os
 
 #baca image ke array (harus ada r'tempat file')
-im = pylab.array(Image.open(r'C:\Users\Rizal\Documents\Rekayasa Perangkat Lunak\projek diluar DDK\python\display untuk image\picture.jpg'))
+im = pylab.array(Image.open(os.path.dirname(__file__) + '\\picture.jpg'))
 #untuk plot image
 pylab.imshow(im)
 

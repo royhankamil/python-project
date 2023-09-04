@@ -1,10 +1,10 @@
 """percobaan pembuatan diplay image dengan filter contour"""
 
 from PIL import Image
-import pylab
+import pylab, os
 
 #membuka image lalu dimasukkan ke array lalu konversi ke grayscale
-im =  pylab.array(Image.open(r'C:\Users\Rizal\Documents\Rekayasa Perangkat Lunak\projek diluar DDK\python\display untuk image\great.jpg') .convert('L'))
+im =  pylab.array(Image.open(os.path.dirname(__file__)+'\\great.jpg') .convert('L'))
 #buat gambar baru 
 pylab.figure()
 #mengubah ke gray

@@ -1,9 +1,9 @@
 """mencoba latihan image filtering"""
 import numpy as np
-import cv2
+import cv2, os
 from matplotlib import pyplot as plt
 
-img = cv2.imread(r'C:\Users\Rizal\Documents\Rekayasa Perangkat Lunak\projek diluar DDK\python\display untuk image\picture.jpg')
+img = cv2.imread(os.path.dirname(__file__)+'\\picture.jpg')
 
 kernel = np.ones((5,5), np.float32)/25
 dst = cv2.filter2D(img, -1, kernel)
