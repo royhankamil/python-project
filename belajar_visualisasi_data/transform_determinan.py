@@ -46,6 +46,7 @@ a2 = np.array([0, 1])
 
 fig, ax = plt.subplots()
 
+# plt.figure("vector awal")
 # membuat sebuah vector yang ditampilkan dalam bentuk vector (arah)
 ax.quiver( 0, 0, a1[0], a1[1], angles="xy", scale_units="xy", scale=1, color='r')
 ax.quiver( 0, 0, a2[0], a2[1], angles="xy", scale_units="xy", scale=1, color='b')
@@ -55,10 +56,10 @@ ax.set_xlim([-2, 2])
 ax.set_ylim([-2, 2])
 
 plt.grid() # menambahkan grid
-plt.show()
 
 # plot 2
 
+# plt.figure("vector sudah transformasi")
 fig, ax = plt.subplots()
 
 transform = np.array([[-1, 2],
