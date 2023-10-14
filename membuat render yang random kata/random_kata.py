@@ -49,6 +49,7 @@ def AmbilKata():
 
 while True:  # melakukan hal itu sampai bilang tidak
     jumlahKata = int(1 + random.random() * 10)
+    # print(jumlahKata)
     hasilNama = ""
     for i in range(jumlahKata):
         kata = AmbilKata()
