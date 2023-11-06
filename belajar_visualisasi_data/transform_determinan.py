@@ -79,6 +79,11 @@ ax.set_ylim([-5, 5])
 
 plt.grid()
 plt.show()
+print()
+print()
+
+
+
 
 # print(a1 > a2, b1 > b2)
 
