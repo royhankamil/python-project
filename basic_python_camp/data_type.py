@@ -91,3 +91,84 @@ print("Halo semua, nama saya %s" % (nama)) # hasilnya akan "Halo semua, nama say
 # str format
 nama = "zidane"
 print("Halo semua, nama saya {}".format(nama)) # hasilnya akan "Halo semua, nama saya zaky"
+
+
+# contoh list
+x = [1, 2.3, 'ngoding', False, 4, "kesalahan", 1.4, -2, 54.2, True]
+
+print(x[2])
+print(x[-1]) # index yang terakhir
+
+x[2] = "baca buku"
+
+print(x[:])
+# array[0:-1]
+print(x[:2])
+# array[0:stop]
+print(x[2:])
+# array[start:-1]
+print(x[1:3])
+# array[start:stop]
+print(x[1:6:2])
+# array[start:stop:step]
+
+
+# tuple
+# tak dapat diubah tapi bisa di slicing seperti list
+v = ("hello", 3, 0.4, False)
+
+print(v[:2])
+
+
+# set 
+# sifatnya unik (tanpa duplikat) tanpa memiliki urutan
+# dapat menggunakan ini untuk menghilangkan duplikat
+set = {2, 4, 5, 1, 9}
+set_data = {2, 4, 5, 1, 9, 2, 3, 5} # output {2, 4, 5, 1, 9, 3}
+
+"""set adalah himpunan matematika jadi anda bisa meakukan operasi gabungan(union), intersection pada set"""
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+union = set1.union(set2)
+print("Union:", union)
+
+intersection = set1.intersection(set2)
+print("Intersection:", intersection)
+
+
+# dictionary
+data = {'name': 'roy', 'age':17, 'is_married': False}
+
+print(data['name']) # pengaksesan menggunakan key
+data['job'] = "game dev"
+
+# menambahkan data
+print(data['job']) # pengaksesan menggunakan key
+print(data) 
+
+
+# menghapus data
+del data['is_married']
+print(data)
+
+# pengonversian tipe data
+
+print(float(5)) # int to float
+print(float("9")) # string to float
+
+print(int(2.0)) # float to int
+print(int(2.6)) # float to int
+print(int("8")) # string to int
+
+print(str(2)) # int to string
+print(str(2.6)) # float to string
+
+# konversi kumpulan data
+
+print(set([1,2,3]))
+print(tuple({5,6,7}))
+print(list('hello'))
+print(dict([[1,2],[3,4]]))
+print(dict([(3,26),(4,44)]))
+
