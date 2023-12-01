@@ -13,9 +13,8 @@ dan teks ini juga
 print("Hello World!")
 
 nama = input("masukkan nama: ") # input
-cuaca = "mendung"
 
-print("Hello", nama, "selamat siang, hari ini cuacanya", cuaca) # output
+print(nama) # output
 
 
 greeting = 'Hey there im using whatsapp'   #  Ini adalah assignment
