@@ -26,7 +26,7 @@ pada email atau tidak.
 
 import re     # Import modul regex
  
-pola= '^a...s$'
+pola= '^a...s$' # berawalan huruf a (^a)    berakhiran huruf s (s$)
 string_tes= 'abyss'
 hasil= re.match(pola, string_tes)
  
