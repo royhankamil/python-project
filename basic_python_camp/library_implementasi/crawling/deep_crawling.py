@@ -25,7 +25,8 @@ driver.get(url) # membuka url dengan driver (chrome)
 
 # diulang sampai 15 page 
 for k in range(15):
-    # menunggu samapai css selector #zeus-root muncul maksimal menunggu sampai 5 detik
+    # menunggu samapai css selector #zeus-root(body>zeus>all-element) muncul maksimal menunggu sampai 5 detik
+    # menunggu sampai websitenya terender
     WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#zeus-root')))
     time.sleep(2) # tunggu sampai 2 detik
 
@@ -108,6 +109,12 @@ df = df.drop(columns='id') # menghapus kolom id
 # memunculkan data frame
 print(df)
 
+# menghapus csv yang sebelumnya
+try:
+    os.rmdir(os.path.dirname(os.path.realpath(__file__)) + '/data/tokped_TLWR840N.csv')
+except:
+    pass
+
 # save data frame ke csv
-df.to_csv('csv/tokped_TLWR840N.csv')
+df.to_csv(os.path.dirname(os.path.realpath(__file__)) +'/data/tokped_TLWR840N.csv')
 
