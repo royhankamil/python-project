@@ -110,10 +110,10 @@ df = df.drop(columns='id') # menghapus kolom id
 print(df)
 
 # menghapus csv yang sebelumnya
-try:
-    os.rmdir(os.path.dirname(os.path.realpath(__file__)) + '/data/tokped_TLWR840N.csv')
-except:
-    pass
+if os.path.exists(os.path.dirname(os.path.realpath(__file__)) + '/data/tokped_TLWR840N.csv'):
+  os.remove(os.path.dirname(os.path.realpath(__file__)) + '/data/tokped_TLWR840N.csv')
+else:
+  print("The file does not exist")
 
 # save data frame ke csv
 df.to_csv(os.path.dirname(os.path.realpath(__file__)) +'/data/tokped_TLWR840N.csv')

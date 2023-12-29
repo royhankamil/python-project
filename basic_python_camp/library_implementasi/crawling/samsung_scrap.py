@@ -88,10 +88,10 @@ df = pd.DataFrame(data, columns=['id', 'nama', 'harga', 'lokasi', 'perusahaan', 
 
 print(df)
 
-try:
-    os.rmdir(os.path.dirname(os.path.realpath(__file__)) + '/data/tokped_samsung.csv')
-except:
-    pass
+if os.path.exists(os.path.dirname(os.path.realpath(__file__)) + '/data/tokped_samsung.csv'):
+  os.remove(os.path.dirname(os.path.realpath(__file__)) + '/data/tokped_samsung.csv')
+else:
+  print("The file does not exist")
 
 df.to_csv(os.path.dirname(os.path.realpath(__file__)) + '/data/tokped_samsung.csv')
 print('tersimpan')
