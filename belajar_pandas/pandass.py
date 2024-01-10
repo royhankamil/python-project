@@ -48,3 +48,54 @@ print(df.loc[1:2, ["Nama","Pekerjaan"]])
 print(df.iloc[1:2, 1:2]) 
 # menslicing menggunakan nama data [baris_awal : sampai_baris, list_index_kolom]
 print(df.iloc[1:2, [0, 2]]) 
+
+
+
+# pandas memiliki table kolerasi
+print(df.corr())
+
+# informasi statistic seperti rata rata, mean, median, dll
+print(df.describe())
+
+# untuk memberikan informasi data kolom dll
+print(df.info())
+
+# menghitung informasi data kategori
+# df.columns.value_counts() 
+
+
+# menghitung rata rata kolom 
+print(df.Usia.mean())
+
+# menghitung median kolom 
+print(df.Usia.median())
+
+# menghitung jumlah total
+print(df.Usia.count())
+
+
+# menghitung missing value
+print(df.isna().sum())
+
+
+## preprocessing melakukan penanganan data kosong
+# menghilangkan data yang kosong (drop missing value)
+print(df.dropna())
+
+
+# mengisi data kosong dengan "kosong" untuk string
+print(df.filna("kosong"))
+
+# bisa diisi untuk argumennya dictionary berdasarkan kolomnya (jika yang kosong di kolom...) 
+
+# mengisi data yang kosong dengan rata2 / mean / dll (impute missing value)
+df = df.filna(df.mean())
+df.filna(df.median(), inplace=True)
+
+
+# save to csv
+df.to_csv("data/keluarga.csv", index_label="Nama") # index label untuk menyimpan seperti primary key
+# jika tidak memiliki index label maka diisi argumen index=None
+
+
+
