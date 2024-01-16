@@ -31,6 +31,9 @@ plt.plot(a3)
 # plt.plot(a3, marker="*")
 # plt.plot(a4, marker="^")
 
+# akan mengubah scalanya dengan scala asli
+plt.axis('equal')
+
 plt.show()
 
 # a4 = np.array([sin(i) for i in range(100)])
